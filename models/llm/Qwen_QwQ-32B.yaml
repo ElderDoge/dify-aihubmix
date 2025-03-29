@@ -1,0 +1,18 @@
+model: Qwen/QwQ-32B
+original_model: QwQ-32B
+model_type: llm
+provider: Qwen
+label:
+  zh_Hans: Qwen/QwQ-32B
+  en_US: Qwen/QwQ-32B
+description: 硅基流动提供
+features: []
+model_properties:
+  mode: chat
+  context_size: 16384
+parameter_rules: []
+pricing:
+  unit: '0.000001'
+  currency: USD
+  input: '0.14'
+  output: '0.56'

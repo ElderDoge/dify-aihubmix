@@ -1,0 +1,52 @@
+model: Doubao-1.5-pro-32k
+original_model: Doubao-1.5-pro-32k
+model_type: llm
+provider: Doubao
+label:
+  zh_Hans: Doubao-1.5-pro-32k
+  en_US: Doubao-1.5-pro-32k
+description: Doubao-1.5-pro，全新一代主力模型，性能全面升级，在知识、代码、推理、等方面表现卓越。支持32k上下文窗口，输出长度支持最大12k
+  tokens。
+features:
+- tool-call
+- stream-tool-call
+- agent-thought
+model_properties:
+  mode: chat
+  context_size: 32768
+parameter_rules:
+- name: temperature
+  use_template: temperature
+- name: top_p
+  use_template: top_p
+- name: top_k
+  type: int
+  min: 1
+  default: 1
+  label:
+    zh_Hans: Top K
+    en_US: Top K
+- name: presence_penalty
+  use_template: presence_penalty
+  min: -2.0
+  max: 2.0
+  label:
+    en_US: Presence Penalty
+    zh_Hans: 存在惩罚
+- name: frequency_penalty
+  use_template: frequency_penalty
+  min: -2.0
+  max: 2.0
+  label:
+    en_US: Frequency Penalty
+    zh_Hans: 频率惩罚
+- name: max_tokens
+  use_template: max_tokens
+  default: 4096
+  min: 1
+  max: 12288
+pricing:
+  unit: '0.000001'
+  currency: USD
+  input: '0.134'
+  output: '0.335'

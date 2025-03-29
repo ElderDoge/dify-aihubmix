@@ -1,0 +1,45 @@
+model: claude-3-5-sonnet-20241022
+original_model: claude-3-5-sonnet-20241022
+model_type: llm
+provider: Anthropic
+label:
+  zh_Hans: claude-3-5-sonnet-20241022
+  en_US: claude-3-5-sonnet-20241022
+description: Claude 3.5 Sonnet最新模型；该模型AiHubMix同时自动路由官方三个渠道Claude、AWS Claude、谷歌Vertex
+  AI Claude,以实现高并发负载均衡
+features:
+- agent-thought
+- vision
+- tool-call
+- stream-tool-call
+- document
+model_properties:
+  mode: chat
+  context_size: 200000
+parameter_rules:
+- name: temperature
+  use_template: temperature
+- name: top_p
+  use_template: top_p
+- name: top_k
+  label:
+    zh_Hans: 取样数量
+    en_US: Top k
+  type: int
+  help:
+    zh_Hans: 仅从每个后续标记的前 K 个选项中采样。
+    en_US: Only sample from the top K options for each subsequent token.
+  required: false
+- name: max_tokens
+  use_template: max_tokens
+  required: true
+  default: 8192
+  min: 1
+  max: 8192
+- name: response_format
+  use_template: response_format
+pricing:
+  unit: '0.000001'
+  currency: USD
+  input: '3.3'
+  output: '16.5'

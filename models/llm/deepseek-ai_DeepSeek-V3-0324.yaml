@@ -1,0 +1,59 @@
+model: deepseek-ai/DeepSeek-V3-0324
+original_model: DeepSeek-V3-0324
+model_type: llm
+provider: DeepSeek
+label:
+  zh_Hans: deepseek-ai/DeepSeek-V3-0324
+  en_US: deepseek-ai/DeepSeek-V3-0324
+description: 由chutes.ai提供的 deepseek 最新版本 v3-0324；这个是版本，不可用于生产环境，勿高并发请求；仅用于体验测试，生成级别的正在努力部署
+  DeepSeek V3是一个拥有 685 亿参数的专家混合模型，是 DeepSeek 团队旗舰聊天模型系列的最新版本。 它继承了DeepSeek V3模型，并在多种任务上表现出色。
+features:
+- agent-thought
+- tool-call
+- stream-tool-call
+model_properties:
+  mode: chat
+  context_size: 64000
+parameter_rules:
+- name: temperature
+  use_template: temperature
+- name: max_tokens
+  use_template: max_tokens
+  type: int
+  default: 512
+  min: 1
+  max: 4096
+  help:
+    zh_Hans: 指定生成结果长度的上限。如果生成结果截断，可以调大该参数。
+    en_US: Specifies the upper limit on the length of generated results. If the generated
+      results are truncated, you can increase this parameter.
+- name: top_p
+  use_template: top_p
+- name: top_k
+  label:
+    zh_Hans: 取样数量
+    en_US: Top k
+  type: int
+  help:
+    zh_Hans: 仅从每个后续标记的前 K 个选项中采样。
+    en_US: Only sample from the top K options for each subsequent token.
+  required: false
+- name: frequency_penalty
+  use_template: frequency_penalty
+- name: response_format
+  label:
+    zh_Hans: 回复格式
+    en_US: Response Format
+  type: string
+  help:
+    zh_Hans: 指定模型必须输出的格式
+    en_US: specifying the format that the model must output
+  required: false
+  options:
+  - text
+  - json_object
+pricing:
+  unit: '0.000001'
+  currency: USD
+  input: '0.2'
+  output: '0.8'

@@ -1,0 +1,24 @@
+model: deepseek-ai/DeepSeek-R1-Zero
+original_model: DeepSeek-R1-Zero
+model_type: llm
+provider: DeepSeek
+label:
+  zh_Hans: deepseek-ai/DeepSeek-R1-Zero
+  en_US: deepseek-ai/DeepSeek-R1-Zero
+description: 来自chutes.ai开源部署；推理FP8;zero是R1的前置最初版本，没有优化，如果不是研究不推荐使用
+features:
+- agent-thought
+model_properties:
+  mode: chat
+  context_size: 64000
+parameter_rules:
+- name: max_tokens
+  use_template: max_tokens
+  min: 1
+  max: 16384
+  default: 16384
+pricing:
+  unit: '0.000001'
+  currency: USD
+  input: '2.2'
+  output: '2.2'

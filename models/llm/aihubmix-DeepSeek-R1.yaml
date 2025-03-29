@@ -1,0 +1,24 @@
+model: aihubmix-DeepSeek-R1
+original_model: DeepSeek-R1
+model_type: llm
+provider: DeepSeek
+label:
+  zh_Hans: aihubmix-DeepSeek-R1
+  en_US: aihubmix-DeepSeek-R1
+description: Azure开源部署，参数671B，输入最高128k，如果不输出思考，在输入增加：先思考再输出答案；强制开启思考
+features:
+- agent-thought
+model_properties:
+  mode: chat
+  context_size: 64000
+parameter_rules:
+- name: max_tokens
+  use_template: max_tokens
+  min: 1
+  max: 16384
+  default: 16384
+pricing:
+  unit: '0.000001'
+  currency: USD
+  input: '1.4'
+  output: '5.6'

@@ -1,0 +1,57 @@
+model: gemini-2.0-flash-exp-image-generation
+original_model: gemini-2.0-flash-exp-image-generation
+model_type: llm
+provider: Google
+label:
+  zh_Hans: gemini-2.0-flash-exp-image-generation
+  en_US: gemini-2.0-flash-exp-image-generation
+description: '可通过预览服务器调用baseurl：https://api.aihubmix.com "modalities": ["text","image"]
+  from openai import OpenAI from PIL import Image from io import BytesIO import base64
+  client = OpenAI( api_key="YOUR_AIHUBMIX_API_KEY", base_url="https://aihubmix.com/v1",
+  ) content = ( "Hi, can you create a 3d rendered image of a pig " "with wings and
+  a top hat flying over a happy " "futuristic scifi city with lots of greenery and
+  describe it?" ) response = client.chat.completions.create( model="gemini-2.0-flash-exp",
+  messages=[ {"role": "user", "content": "生成一幅山水画，并给出一首诗词描述"}, ], modalities=["text",
+  "image"], ) if ( hasattr(response.choices[0].message, "multi_mod_content") and response.choices[0].message.multi_mod_content
+  is not None ): for part in response.choices[0].message.multi_mod_content: if "text"
+  in part and part["text"] is not None: print(part["text"]) elif "inline_data" in
+  part and part["inline_data"] is not None: image = Image.open(BytesIO(base64.b64decode(part["inline_data"]["data"])))
+  image.show()'
+features:
+- agent-thought
+- vision
+- tool-call
+- stream-tool-call
+- document
+- video
+- audio
+- web-search
+model_properties:
+  mode: chat
+  context_size: 1048576
+parameter_rules:
+- name: temperature
+  use_template: temperature
+- name: top_p
+  use_template: top_p
+- name: top_k
+  label:
+    zh_Hans: 取样数量
+    en_US: Top k
+  type: int
+  help:
+    zh_Hans: 仅从每个后续标记的前 K 个选项中采样。
+    en_US: Only sample from the top K options for each subsequent token.
+  required: false
+- name: max_output_tokens
+  use_template: max_tokens
+  default: 8192
+  min: 1
+  max: 8192
+- name: json_schema
+  use_template: json_schema
+pricing:
+  unit: '0.000001'
+  currency: USD
+  input: '0.02'
+  output: '0.02'

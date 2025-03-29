@@ -1,0 +1,19 @@
+model: google/gemma-3-27b-it
+original_model: gemma-3-27b-it
+model_type: llm
+provider: Google
+label:
+  zh_Hans: google/gemma-3-27b-it
+  en_US: google/gemma-3-27b-it
+description: Gemma是谷歌推出的一系列轻量级、先进的开放模型，基于创建Gemini模型所使用的相同研究和技术。Gemma 3模型是多模态的，能够处理文本和图像输入，并生成文本输出，同时提供预训练变体和指令调优变体的开放权重。Gemma
+  3具有128K的大上下文窗口，支持超过140种语言的多语言功能，并且比之前版本提供更多尺寸。Gemma 3模型非常适合各种文本生成和图像理解任务，包括问答、摘要和推理。它们相对较小的体积使得可以在资源有限的环境中部署，例如笔记本电脑、台式机或您自己的云基础设施，从而实现尖端AI模型的民主化访问，帮助每个人促进创新。该模型已准备好用于商业用途。
+features: []
+model_properties:
+  mode: chat
+  context_size: 16384
+parameter_rules: []
+pricing:
+  unit: '0.000001'
+  currency: USD
+  input: '0.2'
+  output: '0.2'

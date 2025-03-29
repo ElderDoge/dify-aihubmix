@@ -1,0 +1,50 @@
+model: Doubao-1.5-pro-256k
+original_model: Doubao-1.5-pro-256k
+model_type: llm
+provider: Doubao
+label:
+  zh_Hans: Doubao-1.5-pro-256k
+  en_US: Doubao-1.5-pro-256k
+description: Doubao-1.5-pro-256k，基于Doubao-1.5-Pro全面升级版，整体效果大幅提升10%。支持256k上下文窗口的推理，输出长度支持最大12k
+  tokens。更高性能、更大窗口、超高性价比，适用于更广泛的应用场景。
+features:
+- agent-thought
+model_properties:
+  mode: chat
+  context_size: 262144
+parameter_rules:
+- name: temperature
+  use_template: temperature
+- name: top_p
+  use_template: top_p
+- name: top_k
+  type: int
+  min: 1
+  default: 1
+  label:
+    zh_Hans: Top K
+    en_US: Top K
+- name: presence_penalty
+  use_template: presence_penalty
+  min: -2.0
+  max: 2.0
+  label:
+    en_US: Presence Penalty
+    zh_Hans: 存在惩罚
+- name: frequency_penalty
+  use_template: frequency_penalty
+  min: -2.0
+  max: 2.0
+  label:
+    en_US: Frequency Penalty
+    zh_Hans: 频率惩罚
+- name: max_tokens
+  use_template: max_tokens
+  default: 4096
+  min: 1
+  max: 12288
+pricing:
+  unit: '0.000001'
+  currency: USD
+  input: '0.8'
+  output: '1.44'

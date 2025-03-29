@@ -1,0 +1,24 @@
+model: deepseek-reasoner
+original_model: deepseek-reasoner
+model_type: llm
+provider: DeepSeek
+label:
+  zh_Hans: deepseek-reasoner
+  en_US: deepseek-reasoner
+description: 官方api目前很不稳定经常输入返回空；模型为新模型 DeepSeek-R1。 思维链为deepseek-reasoner模型在给出正式回答之前的思考过程；支持官方缓存命中费用优惠
+features:
+- agent-thought
+model_properties:
+  mode: chat
+  context_size: 128000
+parameter_rules:
+- name: max_tokens
+  use_template: max_tokens
+  min: 1
+  max: 8192
+  default: 4096
+pricing:
+  unit: '0.000001'
+  currency: USD
+  input: '0.6'
+  output: '2.4'

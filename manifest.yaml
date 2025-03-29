@@ -1,0 +1,29 @@
+meta:
+  arch:
+    - amd64
+    - arm64
+  runner:
+    entrypoint: main
+    language: python
+    version: "3.12"
+  version: 0.0.1
+name: elderdoge-aihubmix
+author: elderdoge
+label:
+  en_US: AIHubMix
+  zh_Hans: AIHubMix
+description:
+  en_US: AIHubMix provides access to various models (LLMs) including Gemini, Claude, DeepSeek and more, configurable via model name, API key, and other parameters.
+  zh_Hans: AIHubMix提供对各种模型（LLM）的访问，包括Gemini、Claude、DeepSeek等，可通过模型名称、API密钥和其他参数进行配置。
+icon: aihubmix_square.svg
+plugins:
+  models:
+    - provider/aihubmix.yaml
+resource:
+  memory: 268435456
+  permission:
+    model:
+      enabled: false
+type: plugin
+version: 0.0.1
+created_at: 2024-03-28T00:00:00.000000Z 

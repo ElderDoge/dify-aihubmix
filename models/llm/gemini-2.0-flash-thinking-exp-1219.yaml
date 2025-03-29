@@ -1,0 +1,44 @@
+model: gemini-2.0-flash-thinking-exp-1219
+original_model: gemini-2.0-flash-thinking-exp-1219
+model_type: llm
+provider: Google
+label:
+  zh_Hans: gemini-2.0-flash-thinking-exp-1219
+  en_US: gemini-2.0-flash-thinking-exp-1219
+description: Gemini 2.0 Flash Thinking思维模式是一个实验性模型，旨在生成模型在响应过程中所经历的“思考过程”。因此，双子座 2.0
+  闪电思维模式在其响应中具备比基础Gemini 2.0 Flash 模型更强的推理能力。
+features:
+- agent-thought
+- vision
+- document
+- video
+- audio
+model_properties:
+  mode: chat
+  context_size: 1048576
+parameter_rules:
+- name: temperature
+  use_template: temperature
+- name: top_p
+  use_template: top_p
+- name: top_k
+  label:
+    zh_Hans: 取样数量
+    en_US: Top k
+  type: int
+  help:
+    zh_Hans: 仅从每个后续标记的前 K 个选项中采样。
+    en_US: Only sample from the top K options for each subsequent token.
+  required: false
+- name: max_output_tokens
+  use_template: max_tokens
+  default: 65536
+  min: 1
+  max: 65536
+- name: json_schema
+  use_template: json_schema
+pricing:
+  unit: '0.000001'
+  currency: USD
+  input: '0.076'
+  output: '0.304'

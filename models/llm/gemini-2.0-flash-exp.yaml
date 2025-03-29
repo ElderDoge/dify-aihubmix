@@ -1,0 +1,49 @@
+model: gemini-2.0-flash-exp
+original_model: gemini-2.0-flash-exp
+model_type: llm
+provider: Google
+label:
+  zh_Hans: gemini-2.0-flash-exp
+  en_US: gemini-2.0-flash-exp
+description: Gemini 2.0 Flash实验版本；目前指向最新的gemini-2.0-flash-exp-image-generation 图像生成和编辑；exp谷歌实验版可能不稳定，请勿用在生成环境
+  https://doc.aihubmix.com/api/Gemini%20%E5%9B%BE%E7%89%87%E7%94%9F%E6%88%90%E5%92%8C%E7%BC%96%E8%BE%91
+  需要新增参数来体验新特性 "modalities":["text","image"] 图片以 Base64 编码形式传递与输出 作为实验模型，建议明确指出 "输出图片"，否则可能只有文本
+  输出图片的默认高度为 1024px python 调用需要最新的 openai sdk 支持，请先运行 pip install -U openai
+features:
+- agent-thought
+- vision
+- tool-call
+- stream-tool-call
+- document
+- video
+- audio
+- web-search
+model_properties:
+  mode: chat
+  context_size: 1048576
+parameter_rules:
+- name: temperature
+  use_template: temperature
+- name: top_p
+  use_template: top_p
+- name: top_k
+  label:
+    zh_Hans: 取样数量
+    en_US: Top k
+  type: int
+  help:
+    zh_Hans: 仅从每个后续标记的前 K 个选项中采样。
+    en_US: Only sample from the top K options for each subsequent token.
+  required: false
+- name: max_output_tokens
+  use_template: max_tokens
+  default: 8192
+  min: 1
+  max: 8192
+- name: json_schema
+  use_template: json_schema
+pricing:
+  unit: '0.000001'
+  currency: USD
+  input: '0.02'
+  output: '0.08'

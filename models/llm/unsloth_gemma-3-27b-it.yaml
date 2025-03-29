@@ -1,0 +1,18 @@
+model: unsloth/gemma-3-27b-it
+original_model: gemma-3-27b-it
+model_type: llm
+provider: Google
+label:
+  zh_Hans: unsloth/gemma-3-27b-it
+  en_US: unsloth/gemma-3-27b-it
+description: 谷歌最新开源模型；由chutes.ai提供
+features: []
+model_properties:
+  mode: chat
+  context_size: 16384
+parameter_rules: []
+pricing:
+  unit: '0.000001'
+  currency: USD
+  input: '2.2'
+  output: '2.2'
